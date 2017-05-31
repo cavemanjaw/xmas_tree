@@ -3,7 +3,8 @@
 int DrawTreeSegment(int segmentSizeInLines, int firstLineSize)
 {
 	int remainingStars = 0;
-	for (int line = 1; line <= segmentSizeInLines; ++line)
+	int line;
+	for (line = 1; line <= segmentSizeInLines; ++line)
 	{
 		for (int i = 0; i < segmentSizeInLines - line; ++i)
 		{
@@ -30,4 +31,5 @@ int DrawTreeSegment(int segmentSizeInLines, int firstLineSize)
 		}
 		std::cout << std::endl;
 	}
-	return (--line) * firstLineSize + remainingStart;
+	return ((--line) * firstLineSize + remainingStars);
+}
