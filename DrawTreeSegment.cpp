@@ -2,34 +2,18 @@
 
 int DrawTreeSegment(int segmentSizeInLines, int firstLineSize)
 {
-	int remainingStars = 0;
 	int line;
-	for (line = 1; line <= segmentSizeInLines; ++line)
+	for (line = 0; line < segmentSizeInLines; ++line)
 	{
-		for (int i = 0; i < segmentSizeInLines - line; ++i)
+		for (int i = 0; i < segmentSizeInLines - line - 1; ++i)
 		{
 			std::cout << " ";
 		}
-		for (int i = 0; i < line * firstLineSize - 1; ++i)
+		for (int i = 0; i < (firstLineSize + 2 * line); ++i)
 		{
 			std::cout << "*";
-		}
-		switch (line % 3)
-		{
-			case 0:
-			std::cout << "**";
-			remainingStars = 2;
-			break;
-
-			case 1:
-			std::cout << "*";
-			remainingStars = 1;
-			break;
-		
-			default:
-			break;
 		}
 		std::cout << std::endl;
 	}
-	return ((--line) * firstLineSize + remainingStars);
+	return ((--line) * 2 + firstLineSize);
 }
