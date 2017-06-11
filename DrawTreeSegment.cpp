@@ -1,11 +1,12 @@
 #include "DrawTreeSegment.h"
 
-int DrawTreeSegment(int segmentSizeInLines, int firstLineSize)
+int DrawTreeSegment(int segmentSizeInLines, int firstLineSize, int segmentIdx)
 {
 	int line;
+	int segmentSpacesAmount = segmentIdx * (segmentSizeInLines - 1);
 	for (line = 0; line < segmentSizeInLines; ++line)
 	{
-		for (int i = 0; i < segmentSizeInLines - line - 1; ++i)
+		for (int i = 0; i < segmentSizeInLines + segmentSpacesAmount - line - 1; ++i)
 		{
 			std::cout << " ";
 		}
