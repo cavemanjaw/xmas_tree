@@ -10,7 +10,7 @@ void DrawTree(int segmentSizeInLines, int segmentAmount)
   {
     lastLineSize = DrawTreeSegment(segmentSizeInLines, lastLineSize, segmentIdx);
     
-    int trunkSpacesAmount = segmentSizeInLines + (segmentAmount - 1) * (segmentSizeInLines - 1) - 1;
+    int trunkSpacesAmount = segmentSizeInLines * segmentAmount - segmentAmount;
     
     //Insert spaces before star sign
     for (int i = 0; i < trunkSpacesAmount; ++i)
