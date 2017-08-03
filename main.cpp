@@ -7,5 +7,10 @@ int main()
 
 	DrawTree(3, 5);
 
+	DrawTree(6, 2);
+
+	DrawTree(2, 15);
+
+
 	return 0;
 }

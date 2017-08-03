@@ -9,6 +9,16 @@ void DrawTree(int segmentSizeInLines, int segmentAmount)
   for (int segmentIdx = segmentAmount - 1; segmentIdx >= 0; --segmentIdx)
   {
     lastLineSize = DrawTreeSegment(segmentSizeInLines, lastLineSize, segmentIdx);
+    
+    int trunkSpacesAmount = segmentSizeInLines + (segmentAmount - 1) * (segmentSizeInLines - 1) - 1;
+    
+    //Insert spaces before star sign
+    for (int i = 0; i < trunkSpacesAmount; ++i)
+    {
+      std::cout << " ";
+    }
+  
+    //Insert trunk star sign
     std::cout << "*" << std::endl;
   }
 }
